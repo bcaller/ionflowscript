@@ -2,7 +2,7 @@
 IonFlowScript
 =============
 
-Read Ion Torrent flow scripts controlling your sequencer's fluidics in a more friendly format.
+Read Ion Torrent flow scripts controlling your sequencer's fluidics in a more friendly format, turning
 
 ::
 
