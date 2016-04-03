@@ -4,7 +4,8 @@ from ionflowscript.functions import load_functions
 from ionflowscript.filenames import SCRIPT_PREFIX, PROCEDURE_PREFIX
 from ionflowscript.proc import print_script, print_proc
 
-if __name__ == '__main__':
+
+def main():
     parser = argparse.ArgumentParser(description="Read an Ion Torrent flow script or procedure",
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument("dir", help="Directory containing script, function and procedure files")
@@ -15,3 +16,6 @@ if __name__ == '__main__':
         print_script(args.dir, args.script, func_dict, cmd_opt_dict)
     elif args.script.startswith(PROCEDURE_PREFIX):
         print_proc(args.dir, args.script, func_dict, cmd_opt_dict)
+
+if __name__ == '__main__':
+    main()
