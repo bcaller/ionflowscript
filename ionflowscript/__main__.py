@@ -1,3 +1,5 @@
+# Copyright Ben Caller 2016
+
 import argparse
 
 from ionflowscript.functions import load_functions
@@ -6,6 +8,7 @@ from ionflowscript.proc import print_script, print_proc
 
 
 def main():
+    print("IonFlowScript by Ben Caller")
     parser = argparse.ArgumentParser(description="Read an Ion Torrent flow script or procedure",
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument("dir", help="Directory containing script, function and procedure files")

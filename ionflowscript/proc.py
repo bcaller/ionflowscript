@@ -1,3 +1,5 @@
+# Copyright Ben Caller 2016
+
 import re
 
 from ionflowscript.filenames import SCRIPT_PREFIX, EXT, PROCEDURE_PREFIX

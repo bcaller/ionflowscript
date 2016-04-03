@@ -1,3 +1,5 @@
+# Copyright Ben Caller 2016
+
 from os.path import join
 
 import re
