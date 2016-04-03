@@ -3,8 +3,29 @@ IonFlowScript
 =============
 
 Read Ion Torrent flow scripts controlling your sequencer's fluidics in a more friendly format.
+
+::
+
+    *	0.100	217
+    *	0.000	78
+    LOOPSTART
+    *	2.000	78
+    *	4.000	0
+    LOOP	0.000	4
+
+into output showing the time in seconds and the valves opened
+
+::
+
+    0.000*: Purge Degasser (3, 8) for 0.1
+    0.100*: Pressurize all Bottles (3, 2, 5, 7, 9) for 0.0
+    LOOPSTART
+    0.100*: Pressurize all Bottles (3, 2, 5, 7, 9) for 2.0
+    2.100*: All valves Closed (0) for 4.0
+    LOOPEND x4
+
 Sorry, it's not currently an editor.
-I also mostly guessed the specification for the files so there may be errors.
+I mostly guessed the specification for the files so there may be errors.
 Also there are no tests.
 
 =====
