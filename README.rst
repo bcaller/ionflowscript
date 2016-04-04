@@ -20,8 +20,8 @@ into output showing the time in seconds and the valves opened
     0.000*: Purge Degasser (3, 8) for 0.1
     0.100*: Pressurize all Bottles (3, 2, 5, 7, 9) for 0.0
     LOOPSTART
-    0.100*: Pressurize all Bottles (3, 2, 5, 7, 9) for 2.0
-    2.100*: All valves Closed (0) for 4.0
+        0.100*: Pressurize all Bottles (3, 2, 5, 7, 9) for 2.0
+        2.100*: All valves Closed (0) for 4.0
     LOOPEND x4
 
 Sorry, it's not currently an editor.
@@ -51,7 +51,7 @@ Showing that at 45.25 seconds, valves 3, 7, 11 and 13 are opened for 5 seconds.
 ::
 
     15.000*: Confirm W1 Holds Pressure (5) for 30.0 		P = GET	0	P = HTARGET
-    ELSE Check Wash1 for leaks.``
+        ELSE Check Wash1 for leaks.
 Checks pressure in W1 and displays an error on failure.
 
 ============
