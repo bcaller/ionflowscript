@@ -39,7 +39,7 @@ def load_functions(dir):
                     _id = int(user_func_match.group(1))
                     function_dict[_id].alt = user_func_match.group(2)
                     if user_func_match.group(3):
-                        function_dict[_id].name += user_func_match.group(3)
+                        function_dict[_id].name += ': ' + user_func_match.group(3)
                 else:
                     cmd_match = cmd_regex.match(line)
                     if cmd_match is not None:

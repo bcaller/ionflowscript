@@ -61,19 +61,23 @@ def print_script(directory, name, func_dict, cmd_opt_dict, error_messages=None, 
                         func_id = find_user_function(func_dict, end + 'C').id
                         end += 'NUCLEOTIDE (e.g. C)'
                     dur = float(parts[1])
-                    duration_str = 'for {}'.format(dur) if dur != -1 else 'forever'
+                    function_name = str(func_dict[func_id])
+                    duration_str = 'for {}'.format(dur) if dur != -1else 'forever'
+                    if dur == 0:
+                        function_name = "CLOSE / STOP " + function_name
+                        duration_str = ''
                     if parts[0][0] == '+':
                         start = float(parts[0]) + t_counter
                         if func_id == 0 and dur == 0.0:
                             output("{:.3f}+: ? {}".format(start, end))
                         else:
-                            output("{:.3f}+: {} {} {}".format(start, func_dict[func_id], duration_str, end))
+                            output("{:.3f}+: {} {} {}".format(start, function_name, duration_str, end))
                     elif parts[0] == '*':
-                        output("{:.3f}*: {} {} {}".format(t_counter, func_dict[func_id], duration_str, end))
+                        output("{:.3f}*: {} {} {}".format(t_counter, function_name, duration_str, end))
                         if float(parts[1]) != -1:
                             t_counter += float(parts[1])
                     else:
-                        output("{}: {} {} {}".format(parts[0], func_dict[func_id], duration_str, end))
+                        output("{}: {} {} {}".format(parts[0], function_name, duration_str, end))
 
                     if error_messages and len(error_messages) and len(parts) == 4 and 'P =' in parts[3]:
                         output("\tELSE " + error_messages.pop(0))
