@@ -18,7 +18,7 @@ into output showing the time in seconds and the valves opened
 ::
 
     0.000*: Purge Degasser (3, 8) for 0.1
-    0.100*: Pressurize all Bottles (3, 2, 5, 7, 9) for 0.0
+    0.100*: STOP / CLOSE Pressurize all Bottles (3, 2, 5, 7, 9)
     LOOPSTART
         0.100*: Pressurize all Bottles (3, 2, 5, 7, 9) for 2.0
         2.100*: All valves Closed (0) for 4.0
