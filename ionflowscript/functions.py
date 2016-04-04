@@ -11,7 +11,7 @@ class Function:
     def __init__(self, line):
         parts = line.split('\t')
         self.id = int(parts[0])
-        self.valves = [int(v) for v in parts[1].split(',')]
+        self.valves = [int(v) for v in parts[1].replace('.', ',').split(',')]
         self.name = parts[2].rstrip('\n')
         self.alt = None
 
