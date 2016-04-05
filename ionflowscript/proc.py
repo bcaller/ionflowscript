@@ -16,7 +16,7 @@ def print_script(directory, name, func_dict, cmd_opt_dict, error_messages=None, 
     output = lambda x: print('\t' * tabs + x)
     with open(os.path.join(directory, name + EXT), 'r') as f:
         for line in f:
-            line = line.rstrip('\n')
+            line = line.rstrip('\n\t')
             if len(line) == 0:
                 pass
             elif line[0] == '#':
@@ -48,8 +48,8 @@ def print_script(directory, name, func_dict, cmd_opt_dict, error_messages=None, 
                         opt_value = advanced_hex(adv_opt.group(2))
                         if opt_value in cmd_opt_dict:
                             opt_value = cmd_opt_dict[opt_value]
-                        output("{}: opt {} is {}".format(line.rstrip('\t'),
-                                                         advanced_hex(adv_opt.group(1)), opt_value))
+                        output("{line}: opt {option} is '{value}'".format(
+                            line=line.rstrip('\t'), option=advanced_hex(adv_opt.group(1)), value=opt_value))
                     else:
                         output(line)
                     tabs += 1
