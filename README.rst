@@ -33,7 +33,8 @@ Usage
 =====
 
 Find the directory containing the fluidics scripts and function definitions.
-This can be found on your PGM or by extracting the ScriptsVERSION.tar.bz2 archive
+This can be found on your PGM at ``/software/gui/cntrl``
+or by extracting the ScriptsVERSION.tar.bz2 archive
 found in ``/var/www/updates`` on your Torrent Server.
 
 ::

@@ -12,7 +12,8 @@ def main():
     parser = argparse.ArgumentParser(description="Read an Ion Torrent flow script or procedure",
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument("dir", help="Directory containing script, function and procedure files")
-    parser.add_argument("script", help="Name of script or procedure to process (minus the .txt, e.g. Procedure_Init1)")
+    parser.add_argument("script", help="Name of script or procedure to process "
+                                       "(with or without the .txt, e.g. Procedure_Init1)")
     args = parser.parse_args()
     func_dict, cmd_opt_dict = load_functions(args.dir)
     if args.script.startswith(SCRIPT_PREFIX):

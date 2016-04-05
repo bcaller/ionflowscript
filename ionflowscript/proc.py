@@ -14,7 +14,7 @@ def print_script(directory, name, func_dict, cmd_opt_dict, error_messages=None, 
     t_counter = 0.0
     loop_start_time = 0.0
     output = lambda x: print('\t' * tabs + x)
-    with open(os.path.join(directory, name + EXT), 'r') as f:
+    with open(os.path.join(directory, name if name.endswith(EXT) else name + EXT), 'r') as f:
         for line in f:
             line = line.rstrip('\n\t')
             if len(line) == 0:
@@ -85,7 +85,7 @@ def print_script(directory, name, func_dict, cmd_opt_dict, error_messages=None, 
 
 
 def print_proc(directory, name, func_dict, cmd_opt_dict):
-    with open(os.path.join(directory, name + EXT), 'r') as f:
+    with open(os.path.join(directory, name if name.endswith(EXT) else name + EXT), 'r') as f:
         for line in f:
             line = line.rstrip('\n')
             if line[0] == '#':
