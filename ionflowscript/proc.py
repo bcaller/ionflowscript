@@ -32,7 +32,7 @@ def print_script(directory, name, func_dict, cmd_opt_dict, error_messages=None, 
                         tabs += 1
                     else:
                         parts = line.split('\t')
-                        times = int(parts[2]) - int(float(parts[1]))
+                        times = int(parts[2]) - (int(float(parts[1])) if parts[1] else 0)
                         delta_t = t_counter - loop_start_time
                         t_counter = loop_start_time + delta_t * times
                         tabs -= 1
